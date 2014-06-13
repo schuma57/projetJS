@@ -1,0 +1,114 @@
+
+html{
+    margin: 0 auto;
+    padding: 0 auto;
+    height: 100%;
+    background:white;
+}
+
+body{
+    background: pink;
+    width: 90%;
+    min-width:600px;
+    max-width: 1000px;
+    margin: 0 auto;
+    position:relative;
+    height:100%;
+}
+
+header{
+    background:silver;
+    border: solid black 1px;
+    border-radius: 0px 0px 15px 15px;
+}
+
+h1{
+    text-align: center;
+    color: white;
+    text-shadow: black 8px 8px 10px;
+}
+
+section{
+    margin-top: 4em;
+}
+
+form {	
+	display: block;
+	width: 580px;
+	padding:5px;
+	margin-left: auto;
+	margin-right: auto;
+	border:1px solid #C0C0C0;
+	background-color: #CCCCCC;
+    box-shadow: white 12px 12px 20px;
+}
+
+div.spacer {
+	clear: both;
+}
+
+div.center {
+	display: block;
+	width:100%;
+	text-align: center;
+}
+
+label {	
+	float: left;
+	width: 200px;
+	margin: 5px;
+}
+
+label:first-letter {	
+	text-transform: capitalize;
+}
+
+input, select {
+	width: 300px;
+	margin: 5px;
+}
+
+input.submit {
+	width: 150px;
+	margin-left: auto;
+	margin-right: auto;	
+}
+
+.hidden {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+div#messages {
+	float:right;
+	background-color: #F0F0F0;
+	border:1px solid #C0C0C0;
+	width:300px;
+}
+
+li.faux {
+	font-weight: bold;
+	color: red;
+}
+
+li.vrai {
+	font-weight: normal;
+	color: green;
+}
+
+
+footer{
+    position: absolute;
+    bottom:0;
+    background:silver;
+    border: solid black 1px;
+    border-radius: 15px 15px 0 0;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 0.8em;
+    box-sizing: border-box;
+}
