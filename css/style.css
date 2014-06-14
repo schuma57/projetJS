@@ -63,7 +63,7 @@ label:first-letter {
 	text-transform: capitalize;
 }
 
-input, select {
+input {
 	width: 300px;
 	margin: 5px;
 }
@@ -74,13 +74,6 @@ input.submit {
 	margin-right: auto;	
 }
 
-.hidden {
-	display: none;
-}
-
-.show {
-	display: block;
-}
 
 div#messages {
 	float:right;
@@ -89,14 +82,13 @@ div#messages {
 	width:300px;
 }
 
-li.faux {
-	font-weight: bold;
-	color: red;
-}
 
-li.vrai {
-	font-weight: normal;
-	color: green;
+.error {
+     font: normal 10px arial;
+     padding: 3px;
+     margin: 3px;
+     background-color: #ffc;
+     border: 1px solid #c00;
 }
 
 

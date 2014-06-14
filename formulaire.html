@@ -1,49 +1,52 @@
 <html>
 <head> 
 	<title> Projet JavaScript AS </title>
-	<link rel="stylesheet" type="text/css" href="style.css"/>
-	<script src="scripts.js"></script>
-	<script type="text/javascript" src="jquery-2.1.1.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+	<script type="text/javascript" src="jquery-date/jquery-ui-1.10.4.custom.js"></script>
+	<script type="text/javascript" src="jquery-date/jquery.ui.datepicker-fr.js"></script>
     <script type="text/javascript" src="jquery-validation/jquery.validate.js"></script>
+    <script type="text/javascript" src="jquery-validation/messages_fr.js"></script>
     <script type="text/javascript" src="jquery-validation/additional-methods.js"></script>
+    <script type="text/javascript" src="js/scripts.js"></script>
 </head>
 
 <body>
     <header>
         <h1> Votre inscription </h1>
     </header>
-	
-<!-- onSubmit="return validate();"-->
+
 	<section>
         <form id="myForm" method="get" action="resultat.html" >
 
         <div>
             <label for="nom">nom</label>
-            <input type="text" name="nom" id="nom" checkinput/>
+            <input type="text" name="nom" id="nom" class="text checkname"/>
             <div class="spacer"></div>
 
-            <label for="prenom">prénom</label>
-            <input type="text" name="prenom" id="prenom" class="checkinput"/>
+            <label for="prenom">pr&eacute;nom</label>
+            <input type="text" name="prenom" id="prenom" class="text checkname"/>
             <div class="spacer"></div>
             
-            <label for="naissance">date de naissance</label>
-            <input type="text" name="naissance" id="naissance" class="checkinput"/>
+            <label for="datepicker">date de naissance</label>
+            <input type="text" name="datepicker" id="datepicker" class="text checkdate"/>
             <div class="spacer"></div>
 
             <label for="email">email</label>
-            <input type="text" name="email" id="email" class="checkemail"/>
+            <input type="text" name="email" id="email" class="text required email"/>
             <div class="spacer"></div>
 
-            <label for="telephone">téléphone</label>
-            <input type="tel" name="telephone" id="telephone" class="checkphone"/>
+            <label for="telephone">t&eacute;l&eacute;phone</label>
+            <input type="tel" name="telephone" id="telephone" class="text checkphone" />
             <div class="spacer"></div>
 
             <label for="mot_de_passe">mot de passe</label>
-            <input type="password" name="mot_de_passe" id="mot_de_passe" class="checkmdp"/>
+            <input type="password" name="mot_de_passe" id="mot_de_passe" class="text required" minlength="3"/>
             <div class="spacer"></div>
 
             <label for="confirmation_mdp">confirmation du mot de passe</label>
-            <input type="password" name="confirmation_mdp" id="confirmation_mdp" class="checkkk" />
+            <input type="password" name="confirmation_mdp" id="confirmation_mdp" class="text required" equalTo="#mot_de_passe"/>
             <div class="spacer"></div>
 
             <div class="center"><input type="submit" class="submit" value="valider"/></div>
@@ -53,8 +56,8 @@
 	</section>
 	
 	<footer>
-        <p>©2013-2014 DUT AS. Tous droits réservés !</p>
+        <p>&copy;2013-2014 DUT AS. Tous droits r&eacute;serv&eacute;s !</p>
 	</footer>
 
-</body>	
+</body>
 </html>
