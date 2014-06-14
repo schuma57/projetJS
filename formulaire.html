@@ -21,35 +21,41 @@
         <form id="myForm" method="get" action="resultat.html" >
 
         <div>
-            <label for="nom">nom</label>
+            <label for="nom">nom :</label>
             <input type="text" name="nom" id="nom" class="text checkname"/>
             <div class="spacer"></div>
 
-            <label for="prenom">pr&eacute;nom</label>
+            <label for="prenom">pr&eacute;nom :</label>
             <input type="text" name="prenom" id="prenom" class="text checkname"/>
             <div class="spacer"></div>
             
-            <label for="datepicker">date de naissance</label>
+            <label for="datepicker">date de naissance :</label>
             <input type="text" name="datepicker" id="datepicker" class="text checkdate"/>
             <div class="spacer"></div>
 
-            <label for="email">email</label>
+            <label for="email">email :</label>
             <input type="text" name="email" id="email" class="text required email"/>
             <div class="spacer"></div>
 
-            <label for="telephone">t&eacute;l&eacute;phone</label>
+            <label for="telephone">t&eacute;l&eacute;phone :</label>
             <input type="tel" name="telephone" id="telephone" class="text checkphone" />
             <div class="spacer"></div>
 
-            <label for="mdp">mot de passe</label>
-            <input type="password" name="mdp" id="mdp" class="text required" minlength="3" onChange="request(testPass)"/>
+            <label for="mot_de_pass">mot de passe :</label>
+            <input type="password" name="mot_de_pass" id="mot_de_pass" class="text required" minlength="3" onkeyup="evalPwd(this.value);"/>
             <div class="spacer"></div>
 
-            <label for="confirmation_mdp">confirmation mdp</label>
-            <input type="password" name="confirm_mdp" id="confirm_mdp" class="text required" equalTo="#mdp"/>
+            <label for="confirmation_mdp">confirmation mdp :</label>
+            <input type="password" name="confirm_mdp" id="confirm_mdp" class="text required" equalTo="#mot_de_pass"/>
             <div class="spacer"></div>
             
-            <div class="" id="passwordStrength"></div>
+            <div class="hidden" id="passStrength">
+                <ul>
+                    <li id="weak" class="nrm">Faible</li>
+                    <li id="medium" class="nrm">Moyen</li>
+                    <li id="strong" class="nrm">Fort</li>
+                </ul>
+            </div>
             <div class="spacer"></div>
 
             <div class="center"><input type="submit" class="submit" value="valider"/></div>

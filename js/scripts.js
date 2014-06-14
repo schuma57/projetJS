@@ -32,8 +32,8 @@ $(document).ready(function(){
          errorPlacement: function(error, element) {
             error.insertAfter(element);
             error.css({
-                left:element.offset().left+element.width()/2,
-                top:element.offset().top-element.height(),
+                left:element.offset().left+15,
+                top:element.offset().top-element.height()*2,
                 "box-shadow": 'red 1px 1px 5px'
             });
          }
@@ -130,6 +130,47 @@ function errorFalse(){
     alert("erreur webservice");
 }
 
+
+function evalPwd(s){
+    document.getElementById('passStrength').className = "visible";
+    var cmpx = 0;
+    
+    if (s.length >= 6){
+        cmpx++;
+        
+        if (s.search("[A-Z]") != -1){
+            cmpx++;
+        }
+        if (s.search("[0-9]") != -1){
+            cmpx++;
+        }
+        if (s.length >= 8 || s.search("[\x20-\x2F\x3A-\x40\x5B-\x60\x7B-\x7E]") != -1){
+            cmpx++;
+        }
+    }
+    
+    if (cmpx == 0){
+        document.getElementById("weak").className = "nrm";
+        document.getElementById("medium").className = "nrm";
+        document.getElementById("strong").className = "nrm";
+    }
+    else if (cmpx == 1){
+        document.getElementById("weak").className = "red";
+        document.getElementById("medium").className = "nrm";
+        document.getElementById("strong").className = "nrm";
+    }
+    else if (cmpx == 2){
+        document.getElementById("weak").className = "yellow";
+        document.getElementById("medium").className = "yellow";
+        document.getElementById("strong").className = "nrm";
+    }
+    else{
+        document.getElementById("weak").className = "green";
+        document.getElementById("medium").className = "green";
+        document.getElementById("strong").className = "green";
+    }
+}
+
 //==============================================
 //=========== Affichage resultats ==============
 //==============================================
@@ -144,8 +185,8 @@ function getUrlVars() {
 function printUrlVars() {
     var vars = getUrlVars();
     for (var key in vars ) {
-        document.write("<tr><td>" + decodeURIComponent(key) + "</td><td>" + decodeURIComponent(vars[key]).replace(/\+/g, " ") + "</td></tr>")
+        document.write("<tr><td>" + decodeURIComponent(key) + "</td><td>" 
+            + decodeURIComponent(vars[key]).replace(/\+/g, " ") + "</td></tr>")
     }
 }
-
 	
