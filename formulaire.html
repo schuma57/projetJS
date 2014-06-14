@@ -41,12 +41,15 @@
             <input type="tel" name="telephone" id="telephone" class="text checkphone" />
             <div class="spacer"></div>
 
-            <label for="mot_de_passe">mot de passe</label>
-            <input type="password" name="mot_de_passe" id="mot_de_passe" class="text required" minlength="3"/>
+            <label for="mdp">mot de passe</label>
+            <input type="password" name="mdp" id="mdp" class="text required" minlength="3" onChange="request(testPass)"/>
             <div class="spacer"></div>
 
-            <label for="confirmation_mdp">confirmation du mot de passe</label>
-            <input type="password" name="confirmation_mdp" id="confirmation_mdp" class="text required" equalTo="#mot_de_passe"/>
+            <label for="confirmation_mdp">confirmation mdp</label>
+            <input type="password" name="confirm_mdp" id="confirm_mdp" class="text required" equalTo="#mdp"/>
+            <div class="spacer"></div>
+            
+            <div class="" id="passwordStrength"></div>
             <div class="spacer"></div>
 
             <div class="center"><input type="submit" class="submit" value="valider"/></div>
