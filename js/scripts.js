@@ -1,7 +1,7 @@
 //==============================================
 //============== Date Picker ===================
 $(function() {
-    $( "#datepicker" ).datepicker({
+    $( "#date_naissance" ).datepicker({
         changeMonth: true,
         changeYear: true,
         yearRange: '-100y:c+nn',
@@ -16,11 +16,12 @@ $(document).ready(function(){
     $.validator.addClassRules({
         checkphone:{
             required: true,
-            PhoneFrOnly: true
+            phoneFrOnly: true
         },
         checkname:{
             required: true,
-            lettres: true
+            lettres: true,
+            minlength: 2
         },
         checkdate:{
             required: true,
@@ -58,7 +59,7 @@ jQuery.validator.addMethod("lettres", function(value, element) {
 //==============================================
 //===== controle de numero de telephone ========
 $(document).ready(function(){
-       $.validator.addMethod("PhoneFrOnly", function(value, element) {
+       $.validator.addMethod("phoneFrOnly", function(value, element) {
            return this.optional(element) || /^0[1-68]([-. ]?[0-9]{2}){4}$/i.test(value);
        }, "Saisir un num&eacute;ro de t&eacute;l&eacute;phone valide");
     
@@ -75,67 +76,36 @@ jQuery.extend(jQuery.validator.messages, {
 //==============================================
 //================== Webservice ================
 //==============================================
-/*
-function getXMLHttpRequest() {                  // gère les anciens navigateurs
-    var xhr = null;
-    
-    if (window.XMLHttpRequest || window.ActiveXObject) {
-        if (window.ActiveXObject) {
-            try {
-                xhr = new ActiveXObject("Msxml2.XMLHTTP");
-            } catch(e) {
-                xhr = new ActiveXObject("Microsoft.XMLHTTP");
-            }
-        } else {
-            xhr = new XMLHttpRequest(); 
-        }
-    } else {
-        alert("Votre navigateur ne supporte pas l'objet XMLHTTPRequest...");
-        return null;
-    }
-    
-    return xhr;
-}*/
 
-function request(callback) {                    // gère la requête au webservice
-    //var currentValue =  document.getElementById("mdp").value;
-    /*var xhr = getXMLHttpRequest();
-    var url = "http://www.cyril-minette.net/iut/javascript/projet/webservice/checkpwd.php?pwd="+currentValue+"";
-    xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-            callback(xhr.responseXML);
-        }
-    };
+//==============================le webservice ne fonctionne pas, le serveur doit etre mal configuré====================
+function request(callback) {
+    var currentValue =  document.getElementById("mot_de_pass").value;
     
-    xhr.open("GET", url, true);
-    xhr.send(null);
-    */
     $.ajax( {
         type: "GET",
-        url:"http://www.cyril-minette.net/iut/javascript/projet/webservice/checkpwd.php?pwd=toto",
+        url:"http://www.cyril-minette.net/iut/javascript/projet/webservice/checkpwd.php?pwd="+currentValue,
         dataType: "xml",
-        success:testPass,
-        error:errorFalse
+        success: successWebservice,
+        error: errorWebservice                  //webservice ne fonctionne pas
     });
 }
 
-function testPass(oData){
+function successWebservice(oData){
     alert("ok");
     //var nodes = oData.getElementsByTagName("score");
     //var force = nodes[0].childNodes[0].nodeValue;
     //alert(force);
 }
 
-function errorFalse(){
+function errorWebservice(){
     alert("erreur webservice");
 }
-
 
 function evalPwd(s){
     document.getElementById('passStrength').className = "visible";
     var cmpx = 0;
     
-    if (s.length >= 6){
+    if (s.length >= 4){
         cmpx++;
         
         if (s.search("[A-Z]") != -1){
@@ -170,6 +140,7 @@ function evalPwd(s){
         document.getElementById("strong").className = "green";
     }
 }
+
 
 //==============================================
 //=========== Affichage resultats ==============

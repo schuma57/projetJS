@@ -26,7 +26,6 @@ header{
     background:silver;
     border: solid black 1px;
     border-radius: 0px 0px 15px 15px;
-    margin-bottom:2em;
 }
 
 h1{
@@ -35,40 +34,46 @@ h1{
     text-shadow: black 8px 8px 10px;
 }
 
+
 /*====================================================================
  * ============================== SECTION ============================
  =====================================================================*/
 
 #navig{
-    float:left;
-    padding-left:25px;
+    float:right;
+    margin-right: 25px;
 }
 
 section{
-    padding-top: 2em;
+    padding-top: 3em;
     margin: auto;
-}
-
-table{
-    text-align: center;
-    margin: 1px auto auto auto;
-}
-
-th, td{
-    border:solid black 1px;
-    padding: 4px;
-    width: 160px;
+    padding-bottom: 4em;
 }
 
 a{
     color: black;
+    background: white;
     text-decoration:none;
+    border: solid black 2px;
+    border-radius: 10px;
+    padding:4px;
 }
 
 a:hover{
+    color: white;
     text-decoration:underline;
+    background:black;
+    border-color:white;
 }
 
+p{
+    
+}
+
+p:first-letter{
+    color: red;
+    font-size:2em;
+}
 
 /*====================================================================
  * ================================ FOOTER ===========================

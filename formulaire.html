@@ -1,11 +1,14 @@
 <html>
 <head> 
-	<title> Projet JavaScript AS </title>
+	<title> Projet JavaScript FF9 </title>
+	<link rel="icon" type="image/jpg" href="img/favicon.jpg" />
 	<link rel="stylesheet" type="text/css" href="css/style.css"/>
 	<link rel="stylesheet" type="text/css" href="css/jquery-ui.css"/>
+	<link rel="stylesheet" type="text/css" href="css/jquery-password.css"/>
 	<script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
 	<script type="text/javascript" src="jquery-date/jquery-ui-1.10.4.custom.js"></script>
 	<script type="text/javascript" src="jquery-date/jquery.ui.datepicker-fr.js"></script>
+	<script type="text/javascript" src="jquery-password/jquery-password.js"></script>
     <script type="text/javascript" src="jquery-validation/jquery.validate.js"></script>
     <script type="text/javascript" src="jquery-validation/messages_fr.js"></script>
     <script type="text/javascript" src="jquery-validation/additional-methods.js"></script>
@@ -16,6 +19,10 @@
     <header>
         <h1> Votre inscription </h1>
     </header>
+    
+    <div id="navig">
+        Retour &agrave; l'<a href="index.html"> accueil </a>
+    </div>
 
 	<section>
         <form id="myForm" method="get" action="resultat.html" >
@@ -29,8 +36,8 @@
             <input type="text" name="prenom" id="prenom" class="text checkname"/>
             <div class="spacer"></div>
             
-            <label for="datepicker">date de naissance :</label>
-            <input type="text" name="datepicker" id="datepicker" class="text checkdate"/>
+            <label for="date_naissance">date de naissance :</label>
+            <input type="text" name="date_naissance" id="date_naissance" class="text checkdate"/>
             <div class="spacer"></div>
 
             <label for="email">email :</label>
@@ -46,7 +53,7 @@
             <div class="spacer"></div>
 
             <label for="confirmation_mdp">confirmation mdp :</label>
-            <input type="password" name="confirm_mdp" id="confirm_mdp" class="text required" equalTo="#mot_de_pass"/>
+            <input type="password" name="confirmation_mdp" id="confirmation_mdp" class="text required" equalTo="#mot_de_pass"/>
             <div class="spacer"></div>
             
             <div class="hidden" id="passStrength">

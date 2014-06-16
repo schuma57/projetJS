@@ -13,7 +13,8 @@ body{
     max-width: 1000px;
     margin: 0 auto;
     position:relative;
-    height:100%;
+    min-height:100%;
+    font-family: arial, sans-serif;
 }
 
 /*====================================================================
@@ -24,6 +25,7 @@ header{
     background:silver;
     border: solid black 1px;
     border-radius: 0px 0px 15px 15px;
+    margin-bottom:1em;
 }
 
 h1{
@@ -35,6 +37,20 @@ h1{
 /*====================================================================
  * ============================== SECTION ============================
  =====================================================================*/
+
+#navig{
+    float:left;
+    padding-left:25px;
+}
+
+#navig a{
+    color: black;
+    text-decoration:none;
+}
+
+#navig a:hover{
+    text-decoration:underline;
+}
 
 section{
     margin-top: 3em;
@@ -83,7 +99,6 @@ input.submit {
 	margin-right: auto;	
 }
 
-
 div#messages {
 	float:right;
 	background-color: #F0F0F0;
@@ -112,7 +127,6 @@ div#messages {
     margin:0px;
     padding:0px;
     height:14px;
-    font-family:Tahoma, Arial, sans-serif;
 }
 
 #passStrength ul{
